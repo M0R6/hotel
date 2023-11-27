@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    background: url(relax-area-resort.jpg) no-repeat;
+    background-size: cover;
+    height: 130vh;
+}
+.wrapper h3 {
+    text-align: center;
+}
+.wrapper table {
+    width: 100%;
+    /* background-color: yellow; */
+}
+.wrapper td {
+    padding: 10px;
+}
+.wrapper form input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.wrapper form input[type="submit"] {
+    background-color: #66ff00;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.wrapper form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.wrapper form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: yellow;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.navbar{
+    height:80px;
+    width: 100%;
+    background: rgba(0,0,0,0.4)
+}
+.navbar h2{
+    text-align: center;
+}
+.logo{
+    width: auto;
+    height: auto;
+    padding: 20px 100px;
+}
+.logo2{
+    padding: 20px 200px;
+}
+.navbar ul{
+    float: right;
+    margin-right: 5px;
+}
+.navbar ul li{
+    list-style: none;
+    margin: 0 0;
+    display: inline-block;
+    line-height: 80px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 13px;
+    
+    margin: 0 0;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+    background: darkblue;
+    border-radius: 2px;
+    text-decoration: underline;
+}
+.center {
+    margin-top: 195px;
+    text-align: center;
+}
+.center h1{
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+}
+.center h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:blanchedalmond;
+}
+.centerButton{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align:center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+.centerButton:hover{
+    text-decoration: underline;
+}
+.centerButtonSOS{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align:center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+.centerButtonSOS:hover{
+    text-decoration: underline;
+}
+.table {
+    box-sizing: border-box;
+    margin: 45px;
+    font-family:'Times New Roman', Times, serif;
+    max-width: 1000px;
+    /* overflow: auto; */
+    margin: 25px auto;
+    border-radius: 30px;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center; 
+    padding: 20px;
+    /* overflow: hidden; */
+    max-height: 500px;
+    /* overflow: auto; */
+}
+.table tr td{
+    /* background-color: rgb(255, 220, 20); */
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    /* border: 1px solid rgb(24, 23, 23);  */
+    text-align: center;
+}
+.table td{
+    /* background-color: rgb(37, 39, 39);  */
+    /* color: crimson; */
+    padding: 15px;
+    /* border: 1px solid rgb(184, 89, 89); */
+}
+.buttonBack{
+    display: inline-block;
+    padding: 10px 15px;
+    text-align:center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin: 0 5px;
+    background-color: #66ff00;
+}
+/* .titleIndex { 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    line-height: 1;
+    font-style: italic;
+    text-align: center;
+}
+.subtitleIndex {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    line-height: 0.1;
+    font-style: italic;
+    text-align: center;
+}
+.buttonIndex{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+} */ 
