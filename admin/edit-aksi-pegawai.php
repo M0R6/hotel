@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 $idpgw = $_POST['idpgw'];
 $namapgw = $_POST['namapgw'];

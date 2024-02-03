@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 $ido = $_POST['idorder'];
 $ot = $_POST['ordertime'];

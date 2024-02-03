@@ -1,6 +1,13 @@
 <h3> Edit Data Pegawai </h3>
 <?php 
-include 'koneksi.php';
+
+session_start();
+if (!isset($_SESSION['nama']) || empty($_SESSION['nama'])) {
+	header("location: ../index.php"); // Ganti "index.php" dengan halaman login Anda
+	exit();
+ } 
+
+include '../koneksi.php';
 $idpgw = $_GET['idpgw'];
 $data = mysqli_query($koneksi,"select * from pegawai where idpgw='$idpgw'");
 while($tampil = mysqli_fetch_array($data)){

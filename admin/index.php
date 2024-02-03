@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['nama']) || empty($_SESSION['nama'])) {
+	header("location: ../index.php"); // Ganti "index.php" dengan halaman login Anda
+	exit();
+ } 
+?>
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
@@ -12,6 +19,7 @@
                     <li> <a href="room.php"> Units </a> </li>
                     <li> <a href="guests.php"> Guest Datas </a> </li>
                     <li> <a href="employees.php"> Employees </a> </li>
+                    <li> <a href="logout.php"> Logout </a> </li>
                 </ul>
             </nav>
             <div class="center">

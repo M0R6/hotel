@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['nama']) || empty($_SESSION['nama'])) {
+	header("location: ../index.php"); // Ganti "index.php" dengan halaman login Anda
+	exit();
+ } 
+?>
+<?php
 include 'koneksi.php';
 date_default_timezone_set('Asia/Jakarta');
 
@@ -31,6 +38,10 @@ if(isset($_GET['idrsv'])) {
     }
 
     $totalprice = $price * $days * $reservation['rooms'];
+    $insertQuery = "INSERT INTO receipts (idrsv, unit, price, days, rooms, totalprice, created_at)
+                    VALUES ('{$reservation['idrsv']}', '{$reservation['unit']}', $price, $days, {$reservation['rooms']}, $totalprice, '$currentDateTime')";
+
+    mysqli_query($koneksi, $insertQuery);
     echo <<<HTML
 <!DOCTYPE html>
 <html>
@@ -208,6 +219,8 @@ if(isset($_GET['idrsv'])) {
                             </tr>
                         </table>
                         <button onclick="printFunction()">Print or save it to PDF</button>
+                        <a href="index.php"><button>Back to Previous Page</button></a>
+                        <a href="logout.php"><button>Log-out</button></a>
                         <script>
                             function printFunction() { 
                                 window.print(); 

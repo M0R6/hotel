@@ -1,6 +1,13 @@
 <h3> Edit Kamar </h3>
+<?php
+session_start();
+if (!isset($_SESSION['nama']) || empty($_SESSION['nama'])) {
+	header("location: ../index.php"); // Ganti "index.php" dengan halaman login Anda
+	exit();
+ } 
+?>
 <?php 
-include 'koneksi.php';
+include '../koneksi.php';
 $idkamar = $_GET['idkamar'];
 $data = mysqli_query($koneksi,"select * from room where idkamar='$idkamar'");
 while($tampil = mysqli_fetch_array($data)){

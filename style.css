@@ -132,7 +132,7 @@
 #about{
     width: 100%;
     height: 100vh;
-    background-image: url(yesmaam.jpg);
+    background-color: #C6A969;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -148,14 +148,14 @@
 }
 #about .content2 h1{
     font-family: "Tangerine", cursive;
-    font-size: 55px;
-    color: black;
+    font-size: 65px;
+    color: rgb(105, 102, 102);
 }
 #about .content2 p{
-    font-family: "Caveat";
-    font-size: 36px;
-    color: #700000;
-    font-weight: bold;
+    font-family: "Salsa";
+    font-size: 34px;
+    color: whitesmoke;
+    /* font-weight: bold; */
 }
 #rsv{
     width: 100%;

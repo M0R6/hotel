@@ -114,7 +114,17 @@
 	-webkit-transition: 0.2s all;
 	transition: 0.2s all;
 }
-
+.booking-form .submit-btn2 {
+	display: inline-block;
+	color: #fff;
+	background-color: #d81e31;
+	font-weight: 700;
+	padding: 14px 30px;
+	border-radius: 4px;
+	border: none;
+	-webkit-transition: 0.2s all;
+	transition: 0.2s all;
+}
 .booking-form .submit-btn:hover,
 .booking-form .submit-btn:focus {
 	opacity: 0.9;

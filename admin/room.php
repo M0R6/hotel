@@ -58,7 +58,7 @@
                 <td> Buat Tidak Tersedia </td>
             </tr>
             <?php
-            include "koneksi.php";
+            include '../koneksi.php';
             $data = mysqli_query($koneksi,"select * from room");
             while($d=mysqli_fetch_array($data)) {
                 ?>

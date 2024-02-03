@@ -1,8 +1,3 @@
-<?php 
-$server="localhost";
-$username="root";
-$password="";
-$database="hotel";
-
-$koneksi = mysqli_connect($server, $username, $password, $database);
-?>       
+<?php
+$koneksi = mysqli_connect("localhost", "root", "", "hotel");
+?>      

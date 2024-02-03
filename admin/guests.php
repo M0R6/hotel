@@ -40,7 +40,7 @@
     <body>
     <div class="wrapper"> 
         <nav class="navbar"> 
-                <img class="logo" src="logo.svg">
+                <a href="index.php"> <img class="logo" src="logo.svg"> </a>
                 <img class="logo2" src="#">
                 <ul> <li> <a href="input-guest.php"> Input Data </a> </li> </ul>
                 <ul> <li> <a href="index.php"> Home </a> </li> </ul>
@@ -64,7 +64,7 @@
                 <td> Nonaktifkan </td>
             </tr>
             <?php
-            include "koneksi.php";
+            include '../koneksi.php';
             $data = mysqli_query($koneksi,"select * from tamu");
             while($d=mysqli_fetch_array($data)) {
                 ?>

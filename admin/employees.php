@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['nama']) || empty($_SESSION['nama'])) {
+	header("location: ../index.php"); // Ganti "index.php" dengan halaman login Anda
+	exit();
+ } 
+?>
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
@@ -58,7 +65,7 @@
                 <td> Buat Tidak Tersedia </td>
             </tr>
             <?php
-            include "koneksi.php";
+            include '../koneksi.php';
             $data = mysqli_query($koneksi,"select * from pegawai");
             while($d=mysqli_fetch_array($data)) {
                 ?>

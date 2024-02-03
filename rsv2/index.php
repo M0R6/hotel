@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['nama']) || empty($_SESSION['nama'])) {
+	header("location: ../index.php"); // Ganti "index.php" dengan halaman login Anda
+	exit();
+ } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,20 +35,13 @@
 </head>
 
 <body>
-		<?php 
-			if(isset($_GET['pesan'])){
-				if($_GET['pesan']=="berhasil-rsv"){
-					echo "<div class='success'>reservasi berhasil! <a href='/hotel/rsv2/receipt.php'> lihat nota </a> </div>";
-				}
-			}
-			?>
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7 col-md-push-5">
 						<div class="booking-cta">
-							<h1>Make your reservation</h1>
+							<h1>Make your reservation, <?php echo $_SESSION['nama']?> </h1>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
 								ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
 								Perspiciatis.
@@ -51,6 +51,22 @@
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
 							<form method="post" action="input-reservasi.php">
+							<div class="row">
+									<!-- <div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">NIK</span>
+											<input class="form-control" type="text" required name="nik">
+										</div>
+									</div> -->
+								</div>
+								<div class="form-group">
+									<span class="form-label">Nomor Induk Kependudukan (NIK)</span>
+									<input class="form-control" type="text" required name="nik">
+								</div>
+								<div class="form-group">
+									<span class="form-label">Nama Sesuai KTP</span>
+									<input class="form-control" type="text" required name="namaktp">
+								</div>
 								<div class="form-group">
 									<span class="form-label">Select unit</span>
 									<select class="form-control" name="unit">
@@ -113,12 +129,18 @@
 									<button type="submit" class="submit-btn">RESERVE NOW</button>
 								</div>
 							</form>
+							<br>
+							<form method="post" action="logout.php">
+								<div class="form-btn">
+									<button type="submit" class="submit-btn2">Logout</button>
+								</div>
+							</form>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+</body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +10,49 @@
  
 	<h1> MORG Homestay<br>Log-in</h1>
  
-	<?php 
-	if(isset($_GET['pesan'])){
-		if($_GET['pesan']=="gagal"){
-			echo "<div class='alert'>Username dan Password tidak sesuai!</div>";
-		}
-	}
-	if(isset($_GET['pesan'])){
-		if($_GET['pesan']=="berhasil-regist"){
-			echo "<div class='success'>registrasi berhasil, silakan login!</div>";
-		}
-	}
-	?>
+	<?php
+if(isset($_GET['pesan'])){
+    if($_GET['pesan']=="gagal"){
+        echo "<div class='alert'>Username dan Password tidak sesuai!</div>";
+    }
+}
+
+if(isset($_GET['pesan'])){
+    if($_GET['pesan']=="berhasil-regist"){
+        echo "<div class='success'>Registrasi berhasil, silakan login!</div>";
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    try {
+        $dbh = new PDO("mysql:host=localhost;dbname=your_database_name", "your_username", "your_password");
+
+        // Use prepared statement to prevent SQL injection
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+
+        $stmt->execute();
+
+        // Check if a row is returned
+        if ($stmt->fetch()) {
+            // Authentication successful
+            header("Location: cek_login.php?username=" . urlencode($username) . "&password=" . urlencode($password));
+            exit();
+        } else {
+            // Authentication failed
+            echo "<div class='alert'>Username dan Password tidak sesuai!</div>";
+        }
+    } catch (PDOException $e) {
+        // Handle database connection errors
+        echo "Error: " . $e->getMessage();
+    }
+}
+?>
+
  
 	<div class="kotak_login">
 		<p class="tulisan_login">Please log-in</p>
@@ -37,7 +69,9 @@
 			<br/>
 			<br/>
 			<center>
-				<a class="link" href="/hotel/">kembali</a>
+				<a class="link" href="../register/">Register</a> <br> 
+				<a class="link" href="#">or</a> <br>
+				<a class="link" href="/hotel/">Home</a>
 			</center>
 		</form>
 		
